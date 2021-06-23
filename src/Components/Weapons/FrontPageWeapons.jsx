@@ -21,10 +21,10 @@ const FrontPageWeapons = () => {
   }, []);
 
   return (
-    <div>
+    <div className="weapons">
       {weapons.map((item) => (
-        <div key={item.uuid}>
-          {item.uuid} - {item.displayName}
+        <div key={item.uuid} className="individualWeapon">
+          <img src={item.displayIcon} alt={item.displayName} />
         </div>
       ))}
     </div>

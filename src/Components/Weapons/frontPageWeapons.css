@@ -1,0 +1,18 @@
+.weapons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  height: auto;
+}
+
+.individualWeapon {
+  display: flex;
+  margin: 10px;
+  width: 200px;
+  height: auto;
+  border: 1px solid blue;
+}
+
+img {
+  width: 100%;
+}
