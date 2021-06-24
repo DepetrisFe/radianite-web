@@ -7,10 +7,16 @@
 
 .individualWeapon {
   display: flex;
+  align-items: center;
+  flex-direction: column;
   margin: 10px;
-  width: 200px;
+  width: auto;
   height: auto;
-  border: 1px solid blue;
+}
+
+h2 {
+  margin: 0;
+  color: white;
 }
 
 img {

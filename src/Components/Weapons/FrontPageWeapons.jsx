@@ -24,7 +24,8 @@ const FrontPageWeapons = () => {
     <div className="weapons">
       {weapons.map((item) => (
         <div key={item.uuid} className="individualWeapon">
-          <img src={item.displayIcon} alt={item.displayName} />
+          <img src={item.killStreamIcon} alt={item.displayName} />
+          {/* <h2>{item.displayName}</h2> */}
         </div>
       ))}
     </div>
