@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./frontPageWeapons.css";
+import WeaponsList from "./WeaponsList";
 
 const FrontPageWeapons = () => {
   //useState que rellena el array de weapons
