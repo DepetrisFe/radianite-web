@@ -1,0 +1,14 @@
+#leftMenu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 200px;
+  height: 100%;
+  background-color: #27272f;
+}
+
+#leftMenu ul li {
+  width: 200px;
+  color: white;
+  margin: 10px;
+}
