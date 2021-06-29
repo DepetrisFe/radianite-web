@@ -3,12 +3,40 @@
   flex-direction: column;
   align-items: center;
   width: 200px;
-  height: 100%;
+  min-height: 100%;
+  position: relative;
   background-color: #27272f;
+}
+
+#leftMenu.active {
+  left: 0px;
+}
+
+#leftMenu.inactive {
+  left: -200px;
 }
 
 #leftMenu ul li {
   width: 200px;
   color: white;
   margin: 10px;
+}
+
+.toggle-btn {
+  position: absolute;
+  left: 230px;
+  top: 30px;
+  cursor: pointer;
+  color: white;
+}
+
+.toggle-btn span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 35px;
+  height: 35px;
+  font-size: 20px;
+  border: 2px solid #27272f;
+  border-radius: 4px;
 }
