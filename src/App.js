@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.css";
 import Header from "./Header";
 import Sidebar from "./Components/Sidebar/Sidebar";
@@ -14,15 +14,9 @@ function App() {
         <div className="content">
           <Sidebar />
           <Switch>
-            <Route path="/agents" exact>
-              <FrontPageAgents />
-            </Route>
-            <Route path="/maps" exact>
-              <FrontPageMaps />
-            </Route>
-            <Route path="/weapons" exact>
-              <FrontPageWeapons />
-            </Route>
+            <Route path="/agents" exact component={FrontPageAgents} />
+            <Route path="/maps" exact component={FrontPageMaps} />
+            <Route path="/weapons" exact component={FrontPageWeapons} />
           </Switch>
         </div>
       </Router>
