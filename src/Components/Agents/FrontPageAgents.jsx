@@ -4,7 +4,7 @@ import "./frontPageAgents.css";
 const FrontPageAgents = () => {
   return (
     <>
-      <div className="agentsMain">Sección en contrucción</div>
+      <div className="agentsMain">Sección Agentes en contrucción</div>
     </>
   );
 };

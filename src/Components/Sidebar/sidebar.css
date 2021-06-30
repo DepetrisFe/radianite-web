@@ -45,6 +45,8 @@
 .individualOption {
   display: flex;
   width: 100%;
+
+  text-decoration: none;
   border-bottom: 1px solid #929296;
   cursor: pointer;
 }
