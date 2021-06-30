@@ -1,6 +1,4 @@
 import React from "react";
-import WeaponsSkins from "./WeaponsSkins";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 const WeaponsList = (props) => {
   return (

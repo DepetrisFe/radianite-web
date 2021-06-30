@@ -6,6 +6,7 @@
   min-height: 100%;
   position: relative;
   background-color: #27272f;
+  border-top: 1px solid #929296;
 }
 
 #leftMenu.active {
@@ -13,7 +14,7 @@
 }
 
 #leftMenu.inactive {
-  left: -200px;
+  left: -201px;
 }
 
 #leftMenu ul li {
@@ -39,4 +40,21 @@
   font-size: 20px;
   border: 2px solid #27272f;
   border-radius: 4px;
+}
+
+.individualOption {
+  display: flex;
+  width: 100%;
+  border-bottom: 1px solid #929296;
+  cursor: pointer;
+}
+
+.individualOption:hover {
+  background-color: #4d4d4d;
+}
+
+.individualOption p {
+  color: #929296;
+  font-size: 18px;
+  margin: 10px 10px 10px 30px;
 }
