@@ -1,6 +1,13 @@
-.header {
+.headerStyle {
   display: flex;
+  align-items: center;
   width: 100%;
   height: 60px;
   background-color: #27272f;
+}
+
+.headerStyle img {
+  height: 50px;
+  width: auto;
+  margin-left: 5px;
 }
