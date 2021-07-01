@@ -1,10 +1,14 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const WeaponsList = (props) => {
   return (
-    <div onClick={() => console.log("nombre: " + props.datos.displayName)}>
+    <div /* onClick={() => console.log("nombre: " + props.datos.displayName)} */
+    >
       <div>
-        <img src={props.datos.killStreamIcon} alt={props.datos.displayName} />
+        <Link to={`/weapons/skins/${props.datos.displayName}`}>
+          <img src={props.datos.killStreamIcon} alt={props.datos.displayName} />
+        </Link>
       </div>
     </div>
   );
