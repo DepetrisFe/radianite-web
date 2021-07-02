@@ -6,7 +6,7 @@ const WeaponsList = (props) => {
     <div /* onClick={() => console.log("nombre: " + props.datos.displayName)} */
     >
       <div>
-        <Link to={`/weapons/skins/${props.datos.displayName}`}>
+        <Link to={`/weapons/skins/${props.datos.uuid}`}>
           <img src={props.datos.killStreamIcon} alt={props.datos.displayName} />
         </Link>
       </div>

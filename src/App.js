@@ -19,7 +19,7 @@ function App() {
             <Route path="/maps" exact component={FrontPageMaps} />
             <Route path="/weapons" exact component={FrontPageWeapons} />
             <Route
-              path="/weapons/skins/:weapname"
+              path="/weapons/skins/:weapid"
               exact
               component={WeaponsSkins}
             />
