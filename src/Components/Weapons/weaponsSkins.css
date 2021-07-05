@@ -1,0 +1,25 @@
+.mainSkins {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  height: 900px;
+  overflow-y: scroll;
+}
+
+.skinImage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #3e3f47;
+  max-width: 500px;
+  width: 100%;
+  margin: 20px 10px 0px 10px;
+  padding-top: 15px;
+  height: auto;
+  border-radius: 10px;
+}
+
+p {
+  color: #929296;
+  font-size: 18px;
+}

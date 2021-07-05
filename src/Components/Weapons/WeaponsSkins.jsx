@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import "./weaponsSkins.css";
 
 const WeaponsSkins = () => {
   const { weapid } = useParams();
@@ -23,7 +24,7 @@ const WeaponsSkins = () => {
   }, []);
 
   return (
-    <div>
+    <div className="mainSkins">
       {individualWeapon.map((item) => (
         <div className="skinImage" key={item.uuid}>
           <img src={item.displayIcon} alt={item.displayName} />
