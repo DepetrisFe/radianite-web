@@ -3,17 +3,16 @@ import { useParams } from "react-router-dom";
 
 const WeaponsSkins = () => {
   const { weapid } = useParams();
-  console.log(weapid);
 
   //useState que rellena el array de weapons
-  const [weaponById, setWeaponById] = useState([]);
+  const [individualWeapon, setIndividualWeapon] = useState([]);
   const baseUrl = `https://valorant-api.com/v1/weapons/${weapid}`;
 
   const getWeaponsByID = async () => {
     try {
       const result = await fetch(baseUrl);
       const finalResult = await result.json();
-      setWeaponById(finalResult.data);
+      setIndividualWeapon(finalResult.data.skins);
     } catch (e) {
       console.log("error", e);
     }
@@ -23,7 +22,16 @@ const WeaponsSkins = () => {
     getWeaponsByID();
   }, []);
 
-  return <>{/* <div>{weaponById.map((item) => console.log(item))}</div> */}</>;
+  return (
+    <div>
+      {individualWeapon.map((item) => (
+        <div className="skinImage" key={item.uuid}>
+          <img src={item.displayIcon} alt={item.displayName} />
+          <p>{item.displayName}</p>
+        </div>
+      ))}
+    </div>
+  );
 };
 
 export default WeaponsSkins;
