@@ -20,8 +20,6 @@ const FrontPageAgents = () => {
     getAgents();
   }, []);
 
-  console.log(agents);
-
   return (
     <div className="agentsMain">
       {agents.map((item) => (
