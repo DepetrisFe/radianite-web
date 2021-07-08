@@ -14,7 +14,7 @@ const Sidebar = () => {
   };
 
   return (
-    <div>
+    <div className="leftSizer">
       <div id="leftMenu" className={toggled}>
         <div className="toggle-btn" onClick={() => onClickHandler()}>
           <span>&#9776;</span>

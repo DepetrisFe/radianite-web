@@ -2,8 +2,8 @@
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  height: 900px;
-  overflow-y: scroll;
+  height: 100vh;
+  overflow-y: auto;
 }
 
 .skinImage {

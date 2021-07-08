@@ -7,4 +7,22 @@
   align-items: center;
   font-size: 30px;
   color: white;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.map {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: #3e3f47;
+  margin: 10px;
+  padding-top: 20px;
+  border-radius: 5px;
+  width: 400px;
+}
+
+p {
+  color: #929296;
+  font-size: 18px;
 }
