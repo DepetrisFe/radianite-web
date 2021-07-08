@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+
 import "./frontPageAgents.css";
 
 const FrontPageAgents = () => {
@@ -23,9 +25,11 @@ const FrontPageAgents = () => {
   return (
     <div className="agentsMain">
       {agents.map((item) => (
-        <div className="agent" key={item.uuid}>
-          <img src={item.displayIcon} alt={item.displayName} />
-          <p>{item.displayName}</p>
+        <div key={item.uuid}>
+          <Link className="agent" to={`/agents/${item.uuid}`}>
+            <img src={item.displayIcon} alt={item.displayName} />
+            <p>{item.displayName}</p>
+          </Link>
         </div>
       ))}
     </div>

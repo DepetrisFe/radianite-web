@@ -10,6 +10,7 @@
   height: 100%;
   background-color: #27272f;
   border-top: 1px solid #929296;
+  transition: all 100ms linear;
 }
 
 #leftMenu.active {
