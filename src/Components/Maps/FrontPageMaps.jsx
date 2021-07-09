@@ -1,25 +1,39 @@
 import React, { useEffect, useState } from "react";
 import "./frontPageMaps.css";
+import CircularProgress from "@material-ui/core/CircularProgress";
 
 const FrontPageMaps = () => {
   //useState que rellena el array de weapons
   const [maps, setMaps] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+  const [hasError, setHasError] = useState(false);
   const baseUrl = "https://valorant-api.com/v1/maps";
 
-  const getMaps = async () => {
-    try {
-      const result = await fetch(baseUrl);
-      const finalResult = await result.json();
-      setMaps(finalResult.data);
-    } catch (e) {
-      console.log("error", e);
-    }
-  };
-
   useEffect(() => {
-    getMaps();
-  }, []);
+    async function fetchData() {
+      try {
+        setIsLoading(true);
+        const result = await fetch(baseUrl);
+        const finalResult = await result.json();
+        setMaps(finalResult.data);
+        setIsLoading(false);
+      } catch (e) {
+        setHasError(true);
+      }
+    }
+    fetchData();
+  }, [baseUrl]);
 
+  if (isLoading) {
+    return (
+      <div className="spinner">
+        <CircularProgress color="secondary" />
+      </div>
+    );
+  }
+  if (maps === undefined || hasError) {
+    return <div>No se encontraron Mapas</div>;
+  }
   return (
     <div className="mapsMain">
       {maps.map((item) => (
