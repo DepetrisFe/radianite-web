@@ -1,22 +1,25 @@
-.spraysMain {
+.buddiesMain {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  padding-top: 30px;
   width: 100%;
   height: 100vh;
-  padding-top: 30px;
   overflow-y: scroll;
 }
 
-.spray {
+.buddy {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   background-color: #3e3f47;
-  margin: 10px;
+  padding: 5px;
   border-radius: 5px;
-  width: 250px;
-  /* box-shadow: 0px 0px 10px 0px rgba(255, 28, 163, 0.4);
-  border: 1px solid rgba(255, 28, 163, 0.4); */
+  width: 200px;
+  margin: 10px;
+}
+
+.buddy img {
+  width: 95%;
 }

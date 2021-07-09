@@ -22,6 +22,12 @@ const Sidebar = () => {
         <Link to="/agents" className="individualOption">
           <p>Agents</p>
         </Link>
+        <Link to="/Buddies" className="individualOption">
+          <p>Buddies</p>
+        </Link>
+        <Link to="/Cards" className="individualOption">
+          <p>Cards</p>
+        </Link>
         <Link to="/maps" className="individualOption">
           <p>Maps</p>
         </Link>

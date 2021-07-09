@@ -9,6 +9,8 @@ import WeaponsSkins from "./Components/Weapons/WeaponsSkins";
 import IndividualAgent from "./Components/Agents/IndividualAgent";
 import IndividualMap from "./Components/Maps/IndividualMap";
 import FrontPageSprays from "./Components/Sprays/FrontPageSprays";
+import FrontPageBuddies from "./Components/Buddies/FrontPageBuddies";
+import FrontPageCards from "./Components/Cards/FrontPageCards";
 
 function App() {
   return (
@@ -19,6 +21,8 @@ function App() {
           <Sidebar />
           <Switch>
             <Route path="/agents" exact component={FrontPageAgents} />
+            <Route path="/buddies" exact component={FrontPageBuddies} />
+            <Route path="/cards" exact component={FrontPageCards} />
             <Route path="/maps" exact component={FrontPageMaps} />
             <Route path="/sprays" exact component={FrontPageSprays} />
             <Route path="/weapons" exact component={FrontPageWeapons} />
