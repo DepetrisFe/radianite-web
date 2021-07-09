@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import "./individualAgent.css";
+import CircularProgress from "@material-ui/core/CircularProgress";
 
 const IndividualAgent = () => {
   const { agtid } = useParams();
@@ -14,13 +15,20 @@ const IndividualAgent = () => {
   useEffect(() => {
     async function fetchData() {
       try {
+        //primero cambiamos el estado del loading a "true"
         setIsLoading(true);
+        //realizamos el pedido a la api
         const result = await fetch(baseUrl);
         const finalResult = await result.json();
+        //como la api nos devuelve un objeto en lugar de un array lo desestructuramos a {data}
+        //ahora data contiene nuestro objeto agent
         const { data } = finalResult;
+        //actualizamos el useState de agent pasandole "data"
         setIndividualAgent(data);
+        //cambiamos el estado de loading a false para que se deje de mostrar el spinner
         setIsLoading(false);
       } catch (e) {
+        //en caso de que la api devuelva error, actualizamos el estado de Error a true para visualizar mensaje de error
         setHasError(true);
       }
     }
@@ -29,8 +37,8 @@ const IndividualAgent = () => {
 
   if (isLoading) {
     return (
-      <div>
-        <p>Loading...</p>
+      <div className="spinner">
+        <CircularProgress color="secondary" />
       </div>
     );
   }
