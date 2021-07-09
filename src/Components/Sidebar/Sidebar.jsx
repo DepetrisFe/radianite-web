@@ -25,6 +25,9 @@ const Sidebar = () => {
         <Link to="/maps" className="individualOption">
           <p>Maps</p>
         </Link>
+        <Link to="/Sprays" className="individualOption">
+          <p>Sprays</p>
+        </Link>
         <Link to="/weapons" className="individualOption">
           <p>Weapons</p>
         </Link>

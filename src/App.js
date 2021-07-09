@@ -8,6 +8,7 @@ import FrontPageWeapons from "./Components/Weapons/FrontPageWeapons";
 import WeaponsSkins from "./Components/Weapons/WeaponsSkins";
 import IndividualAgent from "./Components/Agents/IndividualAgent";
 import IndividualMap from "./Components/Maps/IndividualMap";
+import FrontPageSprays from "./Components/Sprays/FrontPageSprays";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Switch>
             <Route path="/agents" exact component={FrontPageAgents} />
             <Route path="/maps" exact component={FrontPageMaps} />
+            <Route path="/sprays" exact component={FrontPageSprays} />
             <Route path="/weapons" exact component={FrontPageWeapons} />
             <Route
               path="/weapons/skins/:weapid"
