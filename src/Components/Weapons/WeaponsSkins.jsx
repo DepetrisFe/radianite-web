@@ -9,19 +9,18 @@ const WeaponsSkins = () => {
   const [individualWeapon, setIndividualWeapon] = useState([]);
   const baseUrl = `https://valorant-api.com/v1/weapons/${weapid}`;
 
-  const getWeaponsByID = async () => {
-    try {
-      const result = await fetch(baseUrl);
-      const finalResult = await result.json();
-      setIndividualWeapon(finalResult.data.skins);
-    } catch (e) {
-      console.log("error", e);
-    }
-  };
-
   useEffect(() => {
-    getWeaponsByID();
-  }, []);
+    async function fetchData() {
+      try {
+        const result = await fetch(baseUrl);
+        const finalResult = await result.json();
+        setIndividualWeapon(finalResult.data.skins);
+      } catch (e) {
+        console.log("error", e);
+      }
+    }
+    fetchData();
+  }, [baseUrl]);
 
   return (
     <div className="mainSkins">

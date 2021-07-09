@@ -1,27 +1,53 @@
-import React, { useParams, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router";
 import "./individualAgent.css";
 
 const IndividualAgent = () => {
   const { agtid } = useParams();
 
-  //useState que rellena el array de weapons
-  const [individualAgent, setIndividualAgent] = useState([]);
+  //useState que rellena el array de agents
+  const [individualAgent, setIndividualAgent] = useState({});
+  const [isLoading, setIsLoading] = useState(false);
+  const [hasError, setHasError] = useState(false);
   const baseUrl = `https://valorant-api.com/v1/agents/${agtid}`;
 
-  const getAgentByID = async () => {
-    try {
-      const result = await fetch(baseUrl);
-      const finalResult = await result.json();
-      setIndividualAgent(finalResult.data.abilities);
-    } catch (e) {
-      console.log("error", e);
-    }
-  };
-
   useEffect(() => {
-    getAgentByID();
-  }, []);
-  return <div>hola</div>;
-};
+    async function fetchData() {
+      try {
+        setIsLoading(true);
+        const result = await fetch(baseUrl);
+        const finalResult = await result.json();
+        const { data } = finalResult;
+        setIndividualAgent(data);
+        setIsLoading(false);
+      } catch (e) {
+        setHasError(true);
+      }
+    }
+    fetchData();
+  }, [baseUrl]);
 
+  if (isLoading) {
+    return (
+      <div>
+        <p>Loading...</p>
+      </div>
+    );
+  }
+  // if (individualAgent === null) {
+  //   return <></>;
+  // }
+  if (individualAgent === undefined || hasError) {
+    console.log(individualAgent);
+    return <div>Error al buscar Agente</div>;
+  }
+  return (
+    <div className="mainAgents">
+      <img
+        src={individualAgent.fullPortrait}
+        alt={individualAgent.displayName}
+      />
+    </div>
+  );
+};
 export default IndividualAgent;
