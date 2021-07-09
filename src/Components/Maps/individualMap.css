@@ -1,0 +1,10 @@
+.mainMaps {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.mainMaps img {
+  height: 70vh;
+  width: auto;
+}

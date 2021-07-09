@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import "./frontPageMaps.css";
 import CircularProgress from "@material-ui/core/CircularProgress";
 
@@ -37,9 +38,11 @@ const FrontPageMaps = () => {
   return (
     <div className="mapsMain">
       {maps.map((item) => (
-        <div className="map" key={item.uuid}>
-          <img src={item.splash} alt={item.displayName} />
-          <p>{item.displayName}</p>
+        <div key={item.uuid}>
+          <Link className="map" to={`/maps/${item.uuid}`}>
+            <img src={item.splash} alt={item.displayName} />
+            <p>{item.displayName}</p>
+          </Link>
         </div>
       ))}
     </div>
