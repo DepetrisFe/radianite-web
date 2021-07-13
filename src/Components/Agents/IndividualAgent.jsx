@@ -2,8 +2,31 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import "./individualAgent.css";
 import CircularProgress from "@material-ui/core/CircularProgress";
+import Grid from "@material-ui/core/Grid";
+import { makeStyles } from "@material-ui/core/styles";
+
+const styles = makeStyles({
+  root: {
+    display: "flex",
+    justifyContent: "center",
+    width: "100%",
+    height: "100vh",
+    padding: "20px",
+    overflowY: "scroll",
+  },
+  box1: {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    color: "#929296",
+  },
+  box2: {
+    padding: "10px",
+  },
+});
 
 const IndividualAgent = () => {
+  const classes = styles();
   const { agtid } = useParams();
 
   //useState que rellena el array de agents
@@ -49,13 +72,20 @@ const IndividualAgent = () => {
     console.log(individualAgent);
     return <div>Error al buscar Agente</div>;
   }
+
   return (
-    <div className="mainAgents">
-      <img
-        src={individualAgent.fullPortrait}
-        alt={individualAgent.displayName}
-      />
-    </div>
+    <Grid container className={classes.root}>
+      <Grid item xs={12} md={6} className={classes.box1}>
+        <h2>{individualAgent.displayName}</h2>
+        <img
+          src={individualAgent.fullPortrait}
+          alt={individualAgent.displayName}
+        />
+      </Grid>
+      <Grid item xs={12} md={6} className={classes.box2}>
+        <p>{individualAgent.description}</p>
+      </Grid>
+    </Grid>
   );
 };
 export default IndividualAgent;
