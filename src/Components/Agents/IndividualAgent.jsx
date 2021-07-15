@@ -1,36 +1,17 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
-import "./individualAgent.css";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import Grid from "@material-ui/core/Grid";
-import { makeStyles } from "@material-ui/core/styles";
-
-const styles = makeStyles({
-  root: {
-    display: "flex",
-    justifyContent: "center",
-    width: "100%",
-    height: "100vh",
-    padding: "20px",
-    overflowY: "scroll",
-  },
-  box1: {
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-    color: "#929296",
-  },
-  box2: {
-    padding: "10px",
-  },
-});
+import { useStyles } from "./individualAgentStyles";
 
 const IndividualAgent = () => {
-  const classes = styles();
+  const classes = useStyles();
   const { agtid } = useParams();
 
   //useState que rellena el array de agents
   const [individualAgent, setIndividualAgent] = useState({});
+  const [rol, setRol] = useState({});
+  const [abilities, setAbilities] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [hasError, setHasError] = useState(false);
   const baseUrl = `https://valorant-api.com/v1/agents/${agtid}`;
@@ -48,6 +29,9 @@ const IndividualAgent = () => {
         const { data } = finalResult;
         //actualizamos el useState de agent pasandole "data"
         setIndividualAgent(data);
+        //actualizamos el useState de rol de agente
+        setRol(data.role);
+        setAbilities(data.abilities);
         //cambiamos el estado de loading a false para que se deje de mostrar el spinner
         setIsLoading(false);
       } catch (e) {
@@ -84,6 +68,16 @@ const IndividualAgent = () => {
       </Grid>
       <Grid item xs={12} md={6} className={classes.box2}>
         <p>{individualAgent.description}</p>
+        {rol.displayName}
+        {abilities.map((item) => (
+          <Grid container>
+            <Grid key={item.uuid}>
+              <p>{item.displayName}</p>
+            </Grid>
+
+            {/* <img src={item.displayIcon} alt="ability image" /> */}
+          </Grid>
+        ))}
       </Grid>
     </Grid>
   );
