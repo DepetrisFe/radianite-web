@@ -3,6 +3,7 @@ import { useParams } from "react-router";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import Grid from "@material-ui/core/Grid";
 import { useStyles } from "./individualAgentStyles";
+import { Typography, Avatar } from "@material-ui/core";
 
 const IndividualAgent = () => {
   const classes = useStyles();
@@ -58,26 +59,58 @@ const IndividualAgent = () => {
   }
 
   return (
-    <Grid container className={classes.root}>
-      <Grid item xs={12} md={6} className={classes.box1}>
+    <Grid container justifyContent="center" className={classes.root}>
+      <Grid
+        item
+        container
+        xs={12}
+        md={6}
+        direction="column"
+        alignItems="center"
+        className={classes.box1}
+      >
         <h2>{individualAgent.displayName}</h2>
         <img
           src={individualAgent.fullPortrait}
           alt={individualAgent.displayName}
         />
       </Grid>
-      <Grid item xs={12} md={6} className={classes.box2}>
-        <p>{individualAgent.description}</p>
-        {rol.displayName}
-        {abilities.map((item) => (
-          <Grid container>
-            <Grid key={item.uuid}>
-              <p>{item.displayName}</p>
-            </Grid>
+      <Grid
+        item
+        container
+        xs={12}
+        md={6}
+        justifyContent="center"
+        className={classes.box2}
+      >
+        <Typography variant="h6" align="center" gutterBottom>
+          {individualAgent.description}
+        </Typography>
 
-            {/* <img src={item.displayIcon} alt="ability image" /> */}
-          </Grid>
-        ))}
+        <Grid item container direction="column" alignItems="center">
+          <Typography variant="h6" gutterBottom align="center">
+            {rol.displayName}
+          </Typography>
+          <Typography variant="h6" gutterBottom align="center">
+            {rol.description}
+          </Typography>
+        </Grid>
+
+        <Grid item container justifyContent="center">
+          {abilities.map((item) => (
+            <Grid
+              key={item.uuid}
+              direction="column"
+              align="center"
+              className={classes.abilities}
+            >
+              <Typography variant="h6" gutterBottom>
+                {item.displayName}
+              </Typography>
+              <Avatar variant="square" alt="abilities" src={item.displayIcon} />
+            </Grid>
+          ))}
+        </Grid>
       </Grid>
     </Grid>
   );
