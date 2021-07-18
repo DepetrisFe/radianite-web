@@ -37,6 +37,7 @@ const FrontPageMaps = () => {
   }
   return (
     <div className="mapsMain">
+      <p>Esta es una segunda prueba para git</p>
       {maps.map((item) => (
         <div key={item.uuid}>
           <Link className="map" to={`/maps/${item.uuid}`}>
