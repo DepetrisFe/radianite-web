@@ -40,6 +40,7 @@ const FrontPageMaps = () => {
       <p>Esto es una prueba para git</p>
       <p>Esto es branch 1</p>
       <p>Esto es branch 2</p>
+      <p>Esto es branch 1 de nuevo</p>
       {maps.map((item) => (
         <div key={item.uuid}>
           <Link className="map" to={`/maps/${item.uuid}`}>
