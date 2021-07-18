@@ -38,7 +38,11 @@ const FrontPageMaps = () => {
   return (
     <div className="mapsMain">
       <p>Prueba 01 notebook</p>
+<<<<<<< HEAD
       <p>Primer push desktop</p>
+=======
+      <p>Primer push notebook</p>
+>>>>>>> notebook
       {maps.map((item) => (
         <div key={item.uuid}>
           <Link className="map" to={`/maps/${item.uuid}`}>
