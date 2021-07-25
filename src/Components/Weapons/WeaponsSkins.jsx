@@ -26,7 +26,7 @@ const WeaponsSkins = () => {
     <div className="mainSkins">
       {individualWeapon.map((item) => (
         <div className="skinImage" key={item.uuid}>
-          <img src={item.displayIcon} alt={item.displayName} />
+          <img src={item.chromas[0].fullRender} alt={item.displayName} />
           <p>{item.displayName}</p>
         </div>
       ))}

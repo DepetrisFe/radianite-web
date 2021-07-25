@@ -6,6 +6,7 @@ export const useStyles = makeStyles({
     height: "100vh",
     padding: "20px",
     overflowY: "scroll",
+    color: "#929296",
   },
   box1: {
     color: "#929296",

@@ -98,12 +98,7 @@ const IndividualAgent = () => {
 
         <Grid item container justifyContent="center">
           {abilities.map((item) => (
-            <Grid
-              key={item.uuid}
-              direction="column"
-              align="center"
-              className={classes.abilities}
-            >
+            <Grid key={item.uuid} align="center" className={classes.abilities}>
               <Typography variant="h6" gutterBottom>
                 {item.displayName}
               </Typography>
