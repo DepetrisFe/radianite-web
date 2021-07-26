@@ -69,7 +69,9 @@ const IndividualAgent = () => {
         alignItems="center"
         className={classes.box1}
       >
-        <h2>{individualAgent.displayName}</h2>
+        <Typography variant="h3" align="center" gutterBottom>
+          {individualAgent.displayName}
+        </Typography>
         <img
           src={individualAgent.fullPortrait}
           alt={individualAgent.displayName}
@@ -88,13 +90,26 @@ const IndividualAgent = () => {
         </Typography>
 
         <Grid item container direction="column" alignItems="center">
-          <Typography variant="h6" gutterBottom align="center">
-            {rol.displayName}
-          </Typography>
+          <Grid item container justifyContent="center">
+            <Typography variant="h4" gutterBottom align="center">
+              {rol.displayName}
+            </Typography>
+            <Avatar
+              variant="square"
+              alt="role"
+              src={rol.displayIcon}
+              style={{ marginLeft: "20px" }}
+            />
+          </Grid>
+
           <Typography variant="h6" gutterBottom align="center">
             {rol.description}
           </Typography>
         </Grid>
+
+        {/* <Typography variant="h4" align="center">
+          Abilities
+        </Typography> */}
 
         <Grid item container justifyContent="center">
           {abilities.map((item) => (

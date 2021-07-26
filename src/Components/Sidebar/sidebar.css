@@ -51,6 +51,7 @@
 
 .individualOption {
   display: flex;
+  align-items: center;
   width: 100%;
 
   text-decoration: none;
@@ -66,4 +67,9 @@
   color: #929296;
   font-size: 18px;
   margin: 10px 10px 10px 30px;
+}
+
+.icon {
+  color: #cd495e;
+  margin-left: 25px;
 }
