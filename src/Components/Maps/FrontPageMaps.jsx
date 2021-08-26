@@ -10,7 +10,6 @@ const FrontPageMaps = () => {
   const [hasError, setHasError] = useState(false);
   const baseUrl = "https://valorant-api.com/v1/maps";
 
-  //comentario para controlar que funcione git, luego borrar
   useEffect(() => {
     async function fetchData() {
       try {
